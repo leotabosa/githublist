@@ -10,7 +10,6 @@
             </div>
           </div>
 </template>
-
 <script>
 import App from '../App.vue';
 import Axios from 'axios';
