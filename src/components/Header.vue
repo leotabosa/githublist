@@ -2,16 +2,12 @@
     <div>
         <nav class="navbar navbar-dark bg-custom">
             <a class="navbar-brand" href="">Voltar à página inicial</a>
-            <a class="navbar-title" style="color:white; font-size:22px; text-shadow:1px 1px 1px black">Repositórios da Microsoft</a>
+            <a class="navbar-title" style="color:white; font-size:22px;">Repositórios da Microsoft</a>
             <a class="navbar-brand" href="https://github.com/Microsoft">GitHub da Microsoft</a>
         </nav>
     </div>
 </template>
-<script>
-export default {
-    
-}
-</script>
+
 <style scoped>
     nav{
         border-bottom-left-radius: 20px;
@@ -20,16 +16,16 @@ export default {
     .bg-custom{
         background-color:black;
     }
-    .navbar-brand:hover{
-        padding-top:10px;
-        -webkit-transition:0.3s;
-    }
-    .navbar-brand:not(:hover){
-        padding-top:0px;
-        -webkit-transition: 0.3s;
-    }
     .navbar{
         position: relative;
+    }
+    .navbar-brand:hover{
+        font-size:20.4px;
+        transition:0.3s;
+    }
+    .navbar-brand:not(hover){
+        font-size:20px;
+        transition:0.3s;
     }
 </style>
 

@@ -8,10 +8,11 @@
 
 <style scoped>
     .wrap{
-        position:fixed;
+        position: absolute;
         height:100vh;
-        width:96.9vw;
-        z-index: 1;
+        width:100vw;
+        z-index:1;
+        background-image: linear-gradient(#45f792,#ffffff);   
     }
     .loader{
         position: fixed;
@@ -22,8 +23,7 @@
         border-radius: 50%;
         width: 120px;
         height: 120px;
-        animation: spin 2s linear infinite;
-        margin: auto;
+        animation: spin 1.5s ease-in-out infinite;
         left: calc(50% - 60px);
         top: calc(50% - 60px);
         z-index: 1;
