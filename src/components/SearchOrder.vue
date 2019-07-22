@@ -1,8 +1,8 @@
 <template>
     <div class="row">
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-dark" @click="sort('stargazers_count')" >Estrelas</button>
-            <button type="button" class="btn btn-dark" @click="sort('language')">Linguagem</button>
+            <button type="button" class="btn btn-dark btn-order" @click="sort('stargazers_count')">Estrelas</button>
+            <button type="button" class="btn btn-dark btn-order" @click="sort('language')">Linguagem</button>
             <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" 
             type="search" placeholder="Buscar" 
@@ -21,9 +21,8 @@ export default {
             sortPref: { 
                 property: "stargazers_count", 
                 type: "asc",
-                indicator: ''
             },
-            searchTerm: null
+            searchTerm: null,
         }
     },
     props:['repos'],
@@ -37,11 +36,9 @@ export default {
         sort (prop) {
             if (this.sortPref.property === prop) {
             this.sortPref.type = this.sortPref.type === 'asc' ? 'desc' : 'asc';
-            this.sortPref.indicator = this.sortPref.type === 'desc' ? 'Up' : 'Down';
             } else {
             this.sortPref.property = prop;
             this.sortPref.type='desc';  
-
             }
             this.doSort();
         },
@@ -64,11 +61,9 @@ export default {
                 else{
                     return -1;
                 }
-                }    
+                }  
             });
         },
-        
-        
      }
 }
 </script>

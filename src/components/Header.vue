@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar navbar-dark bg-custom">
             <a class="navbar-brand" href="">Voltar à página inicial</a>
-            <a class="navbar-title" style="color:white; font-size:22px;">Repositórios da Microsoft</a>
+            <a class="navbar-brand" href="" style="color:white; font-size:22px;">Repositórios da Microsoft</a>
             <a class="navbar-brand" href="https://github.com/Microsoft">GitHub da Microsoft</a>
         </nav>
     </div>
@@ -20,12 +20,13 @@
         position: relative;
     }
     .navbar-brand:hover{
-        font-size:20.4px;
+        font-size:20.5px;
         transition:0.3s;
     }
     .navbar-brand:not(hover){
         font-size:20px;
         transition:0.3s;
     }
+
 </style>
 

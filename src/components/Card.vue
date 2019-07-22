@@ -37,7 +37,7 @@ export default {
     transition:0.4s;
 }
 .card-body:hover{
-    box-shadow: 10px 10px 1px #3b4a54;
+    box-shadow: 8px 6px 1px #3b4a54;
     transition:0.7s;
 }
 .card-body:not(hover){

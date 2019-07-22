@@ -13,7 +13,7 @@ export default {
         margin-top:30px;
         height: 5vh;
         background-color: black;
-        border-top: 1px solid green;
+        border-top: 3px solid green;
         text-align:center;
     }
     .footer-text-1{
@@ -24,7 +24,7 @@ export default {
         display: inline-block;
     }
     .footer-text-1:hover{
-        color:green;
+        color: white;
         transition:0.2s;
     }
     .footer-link:hover{
