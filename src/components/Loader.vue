@@ -10,7 +10,7 @@
     .wrap{
         position: absolute;
         height:100vh;
-        width:100vw;
+        width:100%;
         z-index:1;
         background-image: linear-gradient(#45f792,#ffffff);   
     }

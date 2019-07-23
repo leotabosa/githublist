@@ -1,28 +1,41 @@
 <template>
-    <div class="row">
-        <div class="col-sm-4" v-for="repo in repos" :key="repo.id">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ repo.name }}</h5>
-                    <p class="card-text">
-                    <br><b>Número de estrelas:</b> {{ repo.stargazers_count }}
-                    <br><b>Linguagem:</b> {{ repo.language }}
-                    </p>
-                    <a :href="repo.html_url" class="btn btn-dark">Ir para o repositório</a>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ repoName }}</h5>
+            <p class="card-text">
+            <br><b>Número de estrelas:</b> {{ repoStars }}
+            <br><b>Linguagem:</b> {{ repoLanguage }}
+            <p class="description"><b>Descrição:</b> {{ repoDescription }}</p></p>
+            <a :href="repoURL"  class="btn btn-dark">Ir para o repositório</a>
         </div>
     </div>
 </template>
 <script>
 export default {
-    props:['repos']
+    props:{
+        repoName:{
+            type: String,
+            required: true
+        },
+        repoStars:{
+            type: Number,
+            required: true
+        },
+        repoLanguage:{
+            type: String,
+        },
+        repoURL:{
+            type: String,
+            required: true
+        },
+        repoDescription:{
+            type: String,
+            default: () => ''
+        },
+    }    
 }
 </script>
 <style scoped>
-.col-sm-4{
-    padding-top: 10px;
-}
 .card{
       border-top:1px solid black;
       border-bottom:1px solid black;
@@ -42,6 +55,11 @@ export default {
 }
 .card-body:not(hover){
     transition:0.7s;
+}
+.description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 </style>
 
