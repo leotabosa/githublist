@@ -78,14 +78,14 @@ export default {
     doSort(event) {
       this.mainRepos.sort((a, b) => {
         var t = event.property
-        if (event.type == 'asc') {
+        if (event.type === 'asc') {
           if (a[t] > b[t]) {
             return -1
           } else {
             return 1
           }
         }
-        if (event.type == 'desc') {
+        if (event.type === 'desc') {
           if (a[t] > b[t]) {
             return 1
           } else {

@@ -6,8 +6,8 @@
         :repoName="repo.name"
         :repoStars="repo.stargazers_count"
         :repoURL="repo.html_url"
-        :repoLanguage="repo.language ? repo.language : ''"
-        :repoDescription="repo.description ? repo.description : ''"
+        :repoLanguage="repo.language"
+        :repoDescription="repo.description"
       >
       </Card>
     </div>
