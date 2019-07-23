@@ -8,32 +8,20 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10",
-    "axios": "^0.19.0"
+    "vue": "2.6.10",
+    "axios": "0.19.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-plugin-eslint": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
+    "@vue/cli-plugin-babel": "3.9.x",
+    "@vue/cli-plugin-eslint": "3.9.x",
+    "@vue/cli-service": "3.9.x",
+    "@vue/eslint-config-prettier": "4.0.x",
+    "@vue/eslint-config-standard": "4.0.x",
+    "babel-eslint": "10.0.x",
+    "eslint": "5.16.x",
+    "eslint-plugin-vue": "5.0.x",
+    "vue-template-compiler": "2.6.10",
+    "prettier": "1.16.x"
   },
   "postcss": {
     "plugins": {
