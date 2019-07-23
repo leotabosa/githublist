@@ -3,12 +3,7 @@
         <a href="" class="footer-link"><h6 class="footer-text-1">Repositórios da Microsoft</h6></a>   
     </div>
 </template>
-<script>
-export default {
-    methods:{
-    }
-}
-</script>
+
 <style scoped>
     .footer-wrap{
         height: 5vh;

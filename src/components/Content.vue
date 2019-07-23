@@ -1,44 +1,36 @@
 <template>
-<div>
-    <Toolbar 
-    @searchTermSetting="middleSearchTerm = $event"
-    @searchHandle="sendMiddleSearchTerm"
-    @sortHandle="middleSortData = $event" 
-    @sortTriggered="sendMiddleSortData"></Toolbar>
+  <div>
+    <Toolbar
+      @searchTermSetting="sendMiddleSearchTerm($event)"
+      @sortSetting="sendMiddleSortData($event)"
+    >
+    </Toolbar>
     <List :repos="repos"></List>
-</div>
+  </div>
 </template>
 
 <script>
-import Toolbar from './Toolbar.vue';
-import List from './List.vue';
+import Toolbar from './Toolbar.vue'
+import List from './List.vue'
 export default {
-    data(){
-        return{
-            middleSearchTerm: null,
-            middleSortData: {}
-        }
+  components: {
+    Toolbar,
+    List,
+  },
+  props: {
+    repos: {
+      type: Array,
+      required: true,
+      default: () => [],
     },
-    props:{
-        repos:{
-            type: Array,
-            required: true,
-            default: () => []
-        }
+  },
+  methods: {
+    sendMiddleSearchTerm(eventData) {
+      this.$emit('onSearch', eventData)
     },
-    components:{
-        Toolbar,
-        List
+    sendMiddleSortData(eventData) {
+      this.$emit('onSort', eventData)
     },
-    methods:{
-        sendMiddleSearchTerm(){
-            this.$emit('searchTermHandle', this.middleSearchTerm);
-            this.$emit('searchTrigger');
-        },
-        sendMiddleSortData(){
-            this.$emit('sortHandle', this.middleSortData);
-            this.$emit('sortTrigger');
-        }
-    }
+  },
 }
 </script>
