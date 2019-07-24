@@ -42,4 +42,9 @@ export default {
   padding-left: 10px;
   margin-right: auto;
 }
+@media screen and (max-width: 768px) {
+  .form-inline {
+    width: 26.8vw;
+  }
+}
 </style>

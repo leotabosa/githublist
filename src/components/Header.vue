@@ -1,11 +1,20 @@
 <template>
   <div>
     <nav class="navbar navbar-dark bg-custom">
-      <a class="navbar-brand" href="">Voltar à página inicial</a>
-      <a class="navbar-brand" href="" style="color:white; font-size:22px;"
+      <a id="navbar-brand-1" class="navbar-brand" href=""
+        >Voltar à página inicial</a
+      >
+      <a
+        id="navbar-title"
+        class="navbar-brand"
+        href=""
+        style="color:white; font-size:22px;"
         >Repositórios da Microsoft</a
       >
-      <a class="navbar-brand" href="https://github.com/Microsoft"
+      <a
+        id="navbar-brand-2"
+        class="navbar-brand"
+        href="https://github.com/Microsoft"
         >GitHub da Microsoft</a
       >
     </nav>
@@ -31,5 +40,24 @@ nav {
 .navbar-brand:not(hover) {
   font-size: 20px;
   transition: 0.3s;
+}
+
+@media screen and (max-width: 767px) {
+  #navbar-brand-1 {
+    visibility: hidden;
+  }
+  #navbar-brand-2 {
+    visibility: hidden;
+  }
+  #navbar-title {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    text-align: center;
+    width: 94%;
+  }
+  .navbar {
+    height: 60px;
+  }
 }
 </style>

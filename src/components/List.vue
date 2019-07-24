@@ -1,5 +1,5 @@
 <template>
-  <div class="grid">
+  <div class="list">
     <Card
       v-for="repo in repos"
       :key="repo.id"
@@ -33,10 +33,25 @@ export default {
   margin-top: 20px;
   transition: 0.7s;
 }
-.grid {
-  margin-bottom: 8vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 33%);
+@media screen and (max-width: 768px) {
+  .list {
+    margin-bottom: 8vh;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cards {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .list {
+    margin-bottom: 8vh;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cards {
+    width: 31.5%;
+  }
 }
 .cards:hover {
   box-shadow: 8px 6px 1px #3b4a54;

@@ -1,6 +1,7 @@
 <template>
   <div class="btn-group" role="group">
     <button
+      id="order-button-1"
       type="button"
       class="btn btn-dark btn-order"
       @click="sort('stargazers_count')"
@@ -23,6 +24,7 @@
       >
     </button>
     <button
+      id="order-button-2"
       type="button"
       class="btn btn-dark btn-order"
       style="border-radius:2px"
@@ -43,22 +45,34 @@
         &#x2193;
       </span>
     </button>
+    <OrderIndicator
+      v-if="indicator"
+      :indicator="sortPref.type"
+    ></OrderIndicator>
   </div>
 </template>
 
 <script>
+import OrderIndicator from './OrderIndicator.vue'
 export default {
+  components: {
+    OrderIndicator,
+  },
   data() {
     return {
       sortPref: {
         property: 'stargazers_count',
         type: 'Decrescente',
       },
+      indicator: false,
     }
   },
   methods: {
     // verificações da função de ordenação
     sort(prop) {
+      document.getElementById('order-button-1').disabled = true
+      document.getElementById('order-button-2').disabled = true
+      this.indicator = true
       if (this.sortPref.property === prop) {
         this.sortPref.type =
           this.sortPref.type === 'Crescente' ? 'Decrescente' : 'Crescente'
@@ -67,6 +81,12 @@ export default {
         this.sortPref.type = 'Crescente'
       }
       this.$emit('sortDataSet', this.sortPref)
+      setTimeout(this.indicatorFalse, 1200)
+    },
+    indicatorFalse() {
+      document.getElementById('order-button-1').disabled = false
+      document.getElementById('order-button-2').disabled = false
+      this.indicator = false
     },
   },
 }
@@ -93,5 +113,13 @@ export default {
 }
 .language-indicator {
   display: inline;
+}
+@media screen and (max-width: 768px) {
+  .btn-group {
+    margin-left: 0;
+  }
+  .btn-group button {
+    width: 30.5vw;
+  }
 }
 </style>
