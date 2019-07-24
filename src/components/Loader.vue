@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <div class="loader"></div>
+    <div class="loader" />
   </div>
 </template>
 
@@ -11,6 +11,7 @@
   width: 100%;
   z-index: 1;
   background-image: linear-gradient(#45f792, #ffffff);
+  opacity: 0.7;
 }
 .loader {
   position: fixed;

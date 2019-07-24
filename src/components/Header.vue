@@ -16,6 +16,7 @@
 nav {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  border-bottom: 3px solid green;
 }
 .bg-custom {
   background-color: black;

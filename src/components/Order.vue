@@ -5,6 +5,22 @@
       class="btn btn-dark btn-order"
       @click="sort('stargazers_count')"
       >Estrelas
+      <span
+        v-if="
+          sortPref.property === 'stargazers_count' &&
+            sortPref.type === 'Crescente'
+        "
+        class="star-indicator"
+        >&#x2191;</span
+      >
+      <span
+        v-if="
+          sortPref.property === 'stargazers_count' &&
+            sortPref.type === 'Decrescente'
+        "
+        class="star-indicator"
+        >&#x2193;</span
+      >
     </button>
     <button
       type="button"
@@ -12,6 +28,20 @@
       style="border-radius:2px"
       @click="sort('language')"
       >Linguagem
+      <span
+        v-if="sortPref.property === 'language' && sortPref.type === 'Crescente'"
+        class="language-indicator"
+      >
+        &#x2191;
+      </span>
+      <span
+        v-if="
+          sortPref.property === 'language' && sortPref.type === 'Decrescente'
+        "
+        class="language-indicator"
+      >
+        &#x2193;
+      </span>
     </button>
   </div>
 </template>
@@ -22,7 +52,7 @@ export default {
     return {
       sortPref: {
         property: 'stargazers_count',
-        type: 'asc',
+        type: 'Decrescente',
       },
     }
   },
@@ -30,10 +60,11 @@ export default {
     // verificações da função de ordenação
     sort(prop) {
       if (this.sortPref.property === prop) {
-        this.sortPref.type = this.sortPref.type === 'asc' ? 'desc' : 'asc'
+        this.sortPref.type =
+          this.sortPref.type === 'Crescente' ? 'Decrescente' : 'Crescente'
       } else {
         this.sortPref.property = prop
-        this.sortPref.type = 'desc'
+        this.sortPref.type = 'Crescente'
       }
       this.$emit('sortDataSet', this.sortPref)
     },
@@ -56,5 +87,11 @@ export default {
 .btn-dark:hover {
   background: #3b4a54;
   transition: 0.4s;
+}
+.star-indicator {
+  display: inline;
+}
+.language-indicator {
+  display: inline;
 }
 </style>

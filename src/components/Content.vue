@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content column">
     <Toolbar
       @searchTermSetting="sendMiddleSearchTerm($event)"
       @sortSetting="sendMiddleSortData($event)"
@@ -34,3 +34,4 @@ export default {
   },
 }
 </script>
+<style scoped></style>

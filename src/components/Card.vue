@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{ repoName }}</h5>
+      <h5 class="card-title" :title="repoName">{{ repoName }}</h5>
       <p class="card-text">
         <br /><b>Número de estrelas:</b> {{ repoStars }} <br />
         <b>Linguagem:</b> {{ repoLanguage }}
@@ -43,6 +43,8 @@ export default {
 .card {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .btn-dark {
   background: black;
@@ -53,14 +55,12 @@ export default {
   background: #3b4a54;
   transition: 0.4s;
 }
-.card-body:hover {
-  box-shadow: 8px 6px 1px #3b4a54;
-  transition: 0.7s;
-}
-.card-body:not(hover) {
-  transition: 0.7s;
-}
 .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

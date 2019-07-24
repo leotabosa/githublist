@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <Order @sortDataSet="sortTrigger($event)"> </Order>
-    <Search @searchTermSet="searchTrigger($event)"></Search>
+    <Order @sortDataSet="sortTrigger($event)" />
+    <Search @searchTermSet="searchTrigger($event)" />
   </div>
 </template>
 <script>

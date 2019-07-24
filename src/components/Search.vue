@@ -32,19 +32,10 @@ export default {
 .form-control:focus {
   border-radius: 50px;
   transition: 0.8s;
+  border: 1px solid green;
 }
 .form-control:not(:focus) {
   border-radius: 0px;
-  transition: 0.4s;
-}
-.btn-dark {
-  background: black;
-  transition: 0.4s;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.btn-dark:hover {
-  background: #3b4a54;
   transition: 0.4s;
 }
 .form-inline {
